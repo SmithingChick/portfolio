@@ -9,12 +9,18 @@
   <li>As a developer and designer, I want my code to be organized so that I can easily find any elements I want to change quickly and easily.</li>
   <li>As a visitor, I want the site to have a good UX/UI experience.</li>
   <li>As a visitor, I want to be able to see new content first</li>
+  <li>As a visitor, I want the design to be fully responsive, with layouts appropriate to the viewport</li>
 </ol>
 
 <h2>Requirements & Rubric Checklist</h2>
 
 <h3>Day 1</h3>
 <ul>
+  <li>[x] Start with a rough pen & paper "wireframe" sketch of what you want your portfolio site to look like.</li>
+  <li><i>----Note: Include photo of wireframe somewhere?</i></li>
+  <li>[x] Submit User Stories <i>Note: Done on Day2</i></li>
+  <li>[x] Add the .eslintrc config file to the root of your repo, so we are all on the same linter settings.</li>
+  <li>[x] Also include a .gitignore file in your root directory to prevent non-relevant files from being pushed to GitHub.</li>
   <li>[] Refactor your CSS into a base, layout, and module structure where applicable.</li>
   <li>[] Think of some ideas for your source data, and code it up in its own file!</li>
   <li>[] Build out an array of three objects to start with, all having similar properties.</li> 
@@ -25,4 +31,11 @@
     <li>[] Use jQuery to clone the example markup for each project, as you add additional content.</li>
     <li>[] Your "Project" prototype should have a .toHtml() function that adds new data to the DOM.</li>
   </ul>
+</ul>
+
+<h3>Day 2</h3>
+<ul>
+<li>[] Be sure to use proper viewport settings.</li>
+<li>[] Use mobile-first design principles when adding CSS.</li>
+<li>[] Add new styles in any media queries as needed to make the page look good on desktop screens.</li>
 </ul>
