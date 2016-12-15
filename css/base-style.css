@@ -1,16 +1,40 @@
-/*here be code ...eventually*/
-@font-face {
 
+/*typefaces are: Philosopher Bold for headings & display (through Google Fonts)
+                Lucida Sans Unicode for paragraphs, captions, etc., with Verdana, Arial, & san-serif as options in font stack*/
+
+/* Colors are:  Main Red: ce001b, r=206 g=0 b=27
+                Dark Red: ad0022, r=173 g=0 b=34
+                Darker Red: 83151A, r=131 g=21 b=26
+                Darkest Red: 660000, r=102 g=0 b=0
+                Not-Quite-White: f6f6f6,
+                Light Grey:d6d6d6,
+                Medium Light Grey:b5b5b5,
+                Medium Grey: 848484,
+                Medium Dark Grey: 3f383b,
+                Not-Quite-Black: 210100, 
+*/
+@font-face {
+  font-family: 'Philosopher', sans-serif;
+  src: url(href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i);
 }
 
-body {
 
+body {
+  background-color: #d6d6d6;
+}
+
+header {
+  background-color: #83151A;
 }
 
 h1, h2, h3, h4, h5, h6 {
-
+  font-family: 'Philosopher', 'Verdana', display;
+  font-weight: 700;
 }
 
 p {
-
+  font-family: "Lucida Sans Unicode";
+  	font-size: 14px;
+  	font-style: normal;
+  	line-height: 20px;
 }
