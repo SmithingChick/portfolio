@@ -1,26 +1,30 @@
 
-/*typefaces are: Philosopher Bold for headings & display (through Google Fonts)
-                Lucida Sans Unicode for paragraphs, captions, etc., with Verdana, Arial, & san-serif as options in font stack*/
+/*Typefaces:
+      Philosopher Bold for headings & display (through Google Fonts)
+      Lucida Sans Unicode for paragraphs, captions, etc.,
+        with Verdana, Arial, & san-serif as options in font stack
+*/
 
-/* Colors are:  Main Red: ce001b, r=206 g=0 b=27
-                Dark Red: ad0022, r=173 g=0 b=34
-                Darker Red: 83151A, r=131 g=21 b=26
-                Darkest Red: 660000, r=102 g=0 b=0
-                Not-Quite-White: f6f6f6,
-                Light Grey:d6d6d6,
-                Medium Light Grey:b5b5b5,
-                Medium Grey: 848484,
-                Medium Dark Grey: 3f383b,
-                Not-Quite-Black: 210100,
+/* Colors:
+      Main Red: #ce001b, rgb(206, 0, 27)
+      Dark Red: #ad0022, rgb(173, 0, 34)
+      Darker Red: #83151A, rgb(131, 21, 26)
+      Darkest Red: #660000, rgb(102, 0, 0)
+      Not-Quite-White: #f6f6f6, rgb(246, 246, 246)
+      Light Grey: #d6d6d6, rgb(214, 214, 214)
+      Medium Light Grey: #b5b5b5, rgb(181, 181, 181)
+      Medium Grey: #848484, rgb(132, 132, 132)
+      Medium Dark Grey: #3f383b, rgb(63, 56, 59)
+      Not-Quite-Black: #210100, rgb(35, 12, 12)
 */
 @font-face {
   font-family: 'Philosopher', sans-serif;
   src: url(href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i");
 }
 
-
 body {
   background-color: #d6d6d6;
+  
 }
 
 header {
@@ -30,11 +34,31 @@ header {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Philosopher', 'Verdana', display;
   font-weight: 700;
-  
+  padding-right: 20px;
 }
 
 h1 {
   font-size: 36pt;
+}
+
+h2 {
+  font-size: 30pt;
+}
+
+h3 {
+  font-size: 28pt;
+}
+
+h4 {
+  font-size: 24pt;
+}
+
+h5 {
+  font-size: 20pt;
+}
+
+h6 {
+  font-size: 18pt;
 }
 
 

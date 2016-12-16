@@ -18,7 +18,7 @@
     <ul>
       <li>[x] Start with a rough pen & paper "wireframe" sketch of what you want your portfolio site to look like.</li>
       <li><i>----Note: Include photo of wireframe somewhere?</i></li>
-      <li>[x] Submit User Stories <i>Note: Done on Day2</i></li>
+      <li>[x] Submit User Stories</li>
       <li>[x] Add the .eslintrc config file to the root of your repo, so we are all on the same linter settings.</li>
       <li>[x] Also include a .gitignore file in your root directory to prevent non-relevant files from being pushed to GitHub.</li>
       <li>[x] Refactor your CSS into a base, layout, and module structure where applicable.</li>
@@ -36,13 +36,11 @@
   <h3>Day 2</h3>
     <ul>
       <li>[] Be sure to use proper viewport settings.</li>
-      <li>[] Use mobile-first design principles when adding CSS.</li>
       <li>[] Add new styles in any media queries as needed to make the page look good on desktop screens.</li>
+      <li>[] Use mobile-first design principles when adding CSS.</li>
     </ul>
 
   <h3>Day 3</h3>
-
-    <p>Adapt these stories as necessary to fit how you want to build your portfolio.</p>
 
     <h4>User Stories: MVP</h4>
       <ol>
@@ -54,6 +52,7 @@
             <li>--Then use jQuery so when the tab is clicked, you hide all the sections, then reveal the associated section only.</li>
           </ul>
         <li>As a reader, I want the portfolio to use a nice color scheme, so that it stands out visually.</li>
+        <ul><li>---As a designer, this is a given</li></ul>
       </ol>
 
       <h5>Stretch Goals:</h5>
@@ -66,13 +65,12 @@
     <h4>Technical Requirements and Grading Rubric</h4>
       <ul>
         <li>[]Use event delegation whenever appropriate.</li>
-        <li>[]Add click handlers to at leat one nav section.</li>
+        <li>[]Add click handlers to at least one nav section.</li>
         <li>[]Do as much work as you can with advanced selectors, rather than littering your markup with classes and ids.</li>
         <li>[]When classes and IDs are needed, pick semantic names. There is to be no $('#content .content') nonsense!<li>
       </ul>
 
   <h3>Day 4 - Templates and Typography</h3>
-    <p>Use what you learned in the class 4 lecture to improve the structure of your Portfolio app codebase.</p>
 
     <h4>User Stories: MVP</h4>
       <ol>
@@ -81,13 +79,14 @@
       </ol>
 
       <h5>User Stories: Stretch Goal</h5>
-        <ol>
-          <li>As a visitor, I want the site to use great typography, so that I have an enjoyable reading experience.</li>
-        </ol>
+        <ul>
+          <li>[x]As a visitor, I want the site to use great typography, so that I have an enjoyable reading experience.</li>
+          <li>---- Good typography is a design necessity, not a stretch goal.</li>
+        </ul>
 
     <h4>Technical Requirements and Grading Rubric</h4>
       <ul>
-        <li>[]Set up your h1, h2, h3 elements according to a type scale.</li>
+        <li>[x]Set up your h1, h2, h3 elements according to a type scale.</li>
         <li>[x]Include some good fonts, that work well together.<li>
         <li>[]Add Handlebars to your blogging system.</li>
         <li>[]Organize your CSS code according to SMACSS, with at least a file for base, layout, and modules.</li>
