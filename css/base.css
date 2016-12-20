@@ -1,3 +1,4 @@
+/* **DESIGN NOTES** */
 
 /*Typefaces:
       Philosopher Bold for headings & display (through Google Fonts)
@@ -19,12 +20,12 @@
 */
 @font-face {
   font-family: 'Philosopher', sans-serif;
-  src: url(href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i");
+  /*src: url(href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i");*/
 }
 
 body {
   background-color: #d6d6d6;
-  
+
 }
 
 header {
