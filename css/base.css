@@ -21,11 +21,11 @@
 @font-face {
   font-family: 'Philosopher', sans-serif;
   /*src: url(href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i");*/
+  font-family: 'Lucida Sans Unicode', 'Verdana', 'Helvetica', sans-serif;;
 }
 
 body {
   background-color: #d6d6d6;
-
 }
 
 header {

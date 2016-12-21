@@ -2,93 +2,101 @@
 
 var blogView = {};
 
-
-blogView.populateFilters = function() {
-  $('article').not('.template').each(function() {
-    var authorName, category, optionTag;
-    authorName = $(this).find('address a').text();
-    optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
-    $('#author-filter').append(optionTag);
-    category = $(this).attr('data-category');
-    optionTag = '<option value="' + category + '">' + category + '</option>';
-    if ($('#category-filter option[value="' + category + '"]').length === 0) {
-      $('#category-filter').append(optionTag);
-    }
+blogView.render = function() {
+  articles.forEach(function(a) {
+    // $('#articles').append(a.toHtml('#article-template'));
+    // $('#author-filter').append(a.toHtml('#author-filter-template'));
+    // if($('#category-filter option:contains("'+ a.category + '")').length === 0) {
+    //   $('#category-filter').append(a.toHtml('#category-filter-template'));
+    // };
   });
 };
 
 blogView.handleAuthorFilter = function() {
   $('#author-filter').on('change', function() {
     if ($(this).val()) {
-      var author = $(this).val();
-        /* TODO: If the select box changes to an option that has a value, we should:
-            1. Hide all of the articles
-            2. Fade in only the articles that match based on on the author
-              that was selected. Hint: use an attribute selector to find
-              those articles that match the value, and then fade them in.
-          */
       $('article').hide();
-      $('article[data-author="' + author + '"]').fadeIn();
+      $('article[data-author="' + $(this).val() + '"]').fadeIn();
     } else {
-      /* Otherwise, we should:
-          1. Show all the articles except the template */
-      $('article').not('.template').show();
+      $('article').fadeIn();
+      $('article.template').hide();
     }
     $('#category-filter').val('');
   });
 };
 
 blogView.handleCategoryFilter = function() {
-  /* TODO: Just like we do for #author-filter above, we should also handle
-  change events on the #category-filter element. Be sure to reset the
-  #author-filter while you're at it! */
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
-      var category = $(this).val();
       $('article').hide();
-      $('article[data-category="' + category + '"]').fadeIn();
+      $('article[data-category="' + $(this).val() + '"]').fadeIn();
     } else {
-      $('article').not('.template').show();
+      $('article').fadeIn();
+      $('article.template').hide();
     }
     $('#author-filter').val('');
   });
 };
 
-blogView.handleMainNav = function () {
-  $('.main-nav').on('click', '.tab', function() {
-    /* TODO:
-      1. Hide all of the .tab-content sections
-      2. Fade in the single .tab-content section that is
-        associated with the .tab element's data-content attribute.
-    */
+blogView.handleMainNav = function() {
+  $('.main-nav').on('click', '.tab', function(e) {
     $('.tab-content').hide();
-    var tabId = $(this).attr('data-content');
-    $('#' + tabId).fadeIn();
+    $('#' + $(this).data('content')).fadeIn();
   });
   $('.main-nav .tab:first').click();
 };
 
 blogView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
-  /* TODO: Add a delegated event handler to reveal the remaining paragraphs.
-    When a .read-on link is clicked, we can:
-    1. Prevent the defaul actionof a link.
-    2. Reveal everything in that particular article now.
-    3. Hide that read-on link!
-
-    // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
-  */
-  $('article').on('click', '.read-on', function(event) {
-    event.preventDefault();
-    $(this).siblings('.article-body' ).find('*:nth-of-type(n+2)').show();
-    $(this).hide();
+  $('article').on('click', 'a.read-on', function(e) {
+    e.preventDefault();
+    if($(this).text() === 'Read on →') {
+      $(this).parent().find('*').fadeIn();
+      $(this).html('Show Less &larr;');
+    } else {
+      $('body').animate({
+        scrollTop: ($(this).parent().offset().top)
+      },200);
+      $(this).html('Read on &rarr;');
+      $(this).parent().find('.article-body *:nth-of-type(n+2)').hide();
+    }
   });
 };
 
-// TODO: Invoke all of the above functions (I mean, methods!):
+blogView.initNewArticlePage = function () {
+  console.log('.tab-content');
+  $('.tab-content').show();
+  $('#export-field').hide();
+  $('#article-json').on('click', function() {
+    $(this).select();
+  });
+  $('#new-form').on('change', blogView.create);
+};
 
-blogView.populateFilters();
-blogView.handleAuthorFilter();
+blogView.create = function() {
+  $('#article-preview').empty();
+  var formArticle = new Article({
+    title: $('#article-title').val(),
+    author: $('#article-author').val(),
+    authorUrl: $('#article-author-url').val(),
+    body: $('#article-body').val(),
+    publishedOn: $('#article-published:checked').length ? new Date() : null
+  });
+  console.log(formArticle);
+  $('#article-preview').append(formArticle.toHtml('#article-template'));
+
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+
+  $('#export-field').show();
+  $('#article-json').val(JSON.stringify(formArticle) + ',');
+};
+
+blogView.render();
 blogView.handleCategoryFilter();
+blogView.handleAuthorFilter();
 blogView.handleMainNav();
+blogView.create();
 blogView.setTeasers();
+blogView.initNewArticlePage();
