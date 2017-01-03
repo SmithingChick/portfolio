@@ -3,8 +3,8 @@
 var entries = [];
 
 function BlogPost (opts) {
-  this.author = opts.author;
-  this.authorUrl = opts.authorUrl;
+  this.performer = opts.performer;
+  this.performerUrl = opts.performerUrl;
   this.title = opts.title;
   this.category = opts.category;
   this.body = opts.body;
@@ -15,9 +15,9 @@ BlogPost.prototype.toHtml = function() {
   var $newEntry = $('article.template').clone();
   $newEntry.removeClass('template');
   $newEntry.attr('data-category', this.category);
-  $newEntry.attr('data-author', this.author);
-  $newEntry.find('.byline a').text(this.author);
-  $newEntry.find('.byline a').attr('href', this.authorUrl);
+  $newEntry.attr('data-performer', this.performer);
+  $newEntry.find('.byline a').text(this.performer);
+  $newEntry.find('.byline a').attr('href', this.performerUrl);
   $newEntry.find('h1:first').text(this.title);
   $newEntry.find('.article-body').html(this.body);
   $newEntry.find('time[pubdate]').attr('datetime', this.publishedOn);
